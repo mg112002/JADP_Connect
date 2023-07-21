@@ -1,5 +1,12 @@
 const { mongoose, Schema } = require('mongoose')
 const testSchema = new mongoose.Schema({
+    patientType: {
+        type: String,
+        required: true,
+        enum: [
+            'O.P.D'
+        ]
+    },
     patientName: {
         type: String,
         required: true,
@@ -15,6 +22,10 @@ const testSchema = new mongoose.Schema({
         ]
     },
     address: {
+        type: String,
+        required: true,
+    },
+    doctorName: {
         type: String,
         required: true,
     },
@@ -55,6 +66,10 @@ const testSchema = new mongoose.Schema({
         type: String
     },
     collectionBoy: {
+        required: true,
+        type: String
+    },
+    collectionCenter: {
         required: true,
         type: String
     },
